@@ -1,0 +1,2016 @@
+/*SPLASH*/
+#splashEduDynamis {
+  position: fixed;
+  /*para que aparezca bien el splash*/
+  top: 0;
+  /*para que aparezca bien el splash*/
+  left: 0;
+  /*para que esté bien colocado el splash*/
+  width: 100%;
+  /*para que ocupe toda la pantalla el splash*/
+  height: 100%;
+  /*para que ocupe toda la altura*/
+  background-color: white;
+  /*para que el fondo sea blanco*/
+  display: flex;
+  /*para que el splash esté bien centrado*/
+  justify-content: center;
+  /*para que el splash esté bien centrado*/
+  align-items: center;
+  /*para que la imagen ocupe el tamaño bien*/
+  z-index: 9999;
+  /*lo que ocupa el splash*/
+}
+
+.cargandoImagenEduDynamis {
+  width: 100px;
+  /*para que la imagen ocupe el tamaño correcto*/
+  animation: spin 1s linear infinite;
+  /*para que la imagen de vueltas de manera infinita*/
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+    /*el efecto para que dé vueltas la imagen*/
+  }
+}
+
+/*VIDEO 1*/
+#estilosVideoInicio {
+  position: absolute;
+  /*necesario para que el vídeo quede bien colocado*/
+  width: 100%;
+  /*tamaño del vídeo*/
+  top: 0;
+  /*para que esté bien colocado el vídeo*/
+  filter: brightness(50%)
+    /*filtro del vídeo del portrait*/
+}
+
+/*ANIMACIÓN DE -> PORDEBAJO*/
+.pordebajo {
+  opacity: 0;
+  /*animación de por debajo*/
+  transform: translateY(1000%);
+  /*animación de por debajo*/
+  animation: entradaDesdeAbajo 1s ease-out forwards;
+  /*animación de por debajo*/
+}
+
+@keyframes entradaDesdeAbajo {
+  to {
+    opacity: 1;
+    /*animación de por debajo*/
+    transform: translateX(0);
+    /*animación de por debajo*/
+  }
+}
+
+/*ELEMENTOS DEL NAV*/
+.contenido_nav {
+  align-items: center;
+  /*para que estén bien colocados los elementos del nav*/
+  display: flex;
+  /*para que los elementos estén organizados en horizontal*/
+  list-style: none;
+  /*para que no estén con las viñetas*/
+  height: 75px;
+  /*altura del nav*/
+  gap: 20px;
+  /*separación entre los elementos del nav*/
+}
+
+/*ESTILO LOGO -> NAV*/
+.estilo_logo_nav {
+  padding-right: 500px;
+  /*espacio entre la imagen y los elementos del nav*/
+  margin-left: -35px;
+  /*para llevar la imagen un poco para atras*/
+  filter: brightness(0) invert(1) grayscale(100%) contrast(100%);
+  /*filtro blanco del logo*/
+}
+
+
+nav.active .estilo_logo_nav {
+  filter: none;
+  /*para que no se aplique filtro en el logo cuando se haga scroll*/
+}
+
+/*ANIMACIÓN FadeUp*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    /*animación fadeInUp*/
+    -webkit-transform: translateY(20px);
+    /*animación fadeInUp*/
+    -ms-transform: translateY(20px);
+    /*animación fadeInUp*/
+    transform: translateY(20px);
+    /*animación fadeInUp*/
+  }
+
+  100% {
+    opacity: 1;
+    /*animación fadeInUp*/
+    -webkit-transform: translateY(0);
+    /*animación fadeInUp*/
+    -ms-transform: translateY(0);
+    /*animación fadeInUp*/
+    transform: translateY(0);
+    /*animación fadeInUp*/
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  /*para que se aplique la animaciñon de fadeInUp*/
+}
+
+/*borde los elementos del nav*/
+.estilosNav a {
+  padding: 5px 5px;
+  /*es necesario dejar ese relleno para que no se crucen con los textos los bordes*/
+  position: relative;
+  /*para que el borde solo se aplique en el controno no en todo el nav*/
+}
+
+/*el borde que se aplica a los elementos del nav al hacer :hover*/
+.borde_lista_nav a:before,
+.borde_lista_nav a:after {
+  position: absolute;
+  /*para que el borde al hacer hover esté bien colocado*/
+  width: 0%;
+  /*para que se aplique bien el borde al hacer hover*/
+  height: 1px;
+  /*altura del borde al hacer hover*/
+  content: '';
+  /*para que aparezca la línea*/
+  background: #e8c404;
+  /*para que los elementos al hacer hover el color sea amarillo*/
+  transition: all 0.3s ease;
+  /*para que la transición sea suave*/
+}
+
+.borde_lista_nav a:before {
+  left: 0px;
+  /*para que el borde se coloque bien*/
+  top: 0px;
+  /*para que el borde se coloque bien*/
+}
+
+.borde_lista_nav a:after {
+  right: 0px;
+  /*para que el borde se coloque bien*/
+  bottom: 0px;
+  /*para que el borde se coloque bien*/
+}
+
+.borde_lista_nav a:hover:before,
+.borde_lista_nav a:hover:after {
+  width: 100%;
+  /*para que el borde aparezca*/
+}
+
+#titularesElementosNAV {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.diferenteServicios:hover {
+  color: white !important;
+}
+
+/*EL BOTÓN DE SERVICIOS LOS ESTILOS*/
+.ServiciosBoton {
+  background-color: #e8c404;
+  /*fondo del botón de Servicios*/
+  cursor: pointer;
+  /*para que esté cursor encima cuando esté el botón de Servicios*/
+  position: relative;
+  /*para que el menu de la sublista estén los elementos bien colocados*/
+  padding: 7.5px 15px;
+  /*relleno del botón de capa de Servicios*/
+  border-radius: 10px;
+  /*redendodeado de la capa de Servicios*/
+}
+
+.ServiciosBoton:hover {
+  border: 1px solid #e8c404;
+  /*para que al hacer hover el borde sea amarillo*/
+  background-color: transparent;
+  /*para que al hacer hover esté el background transparente*/
+  transition: all 0.2s ease;
+  /*transición suave*/
+}
+
+.ServiciosBoton_Lista {
+  list-style: none;
+  /*para que los elementos de la lista no tengan viñetas*/
+  padding: 0;
+  /*para que la sublista esté bien colocada*/
+  margin: 10px -20px;
+  /*margen por la parte superior y que esté bien colocada la sublista*/
+  position: absolute;
+  /*para que esté bien colocada la sublista y la lista*/
+  opacity: 0;
+  /*para que inicialmente la sublista no aparezca*/
+  transition: opacity 0.3s ease;
+  /*transición para que aparezca suavemente*/
+}
+
+.ServiciosBoton:hover .ServiciosBoton_Lista {
+  opacity: 1;
+  /*para que aparezca la lista*/
+}
+
+.ServiciosBoton_Lista li {
+  padding: 5px 10px;
+  /*margen superior y en el lateral para que esté bien colocada la lista*/
+}
+
+/*fin -> EL BOTÓN DE SERVICIOS LOS ESTILOS*/
+
+/*ESTILOS DE LA SUBLISTA -> PARA QUE CUANDO HAGA SCROLL SE PONGA DE LOS SIGUIENTES ESTILOS*/
+nav.active ul li#unoProbando {
+  border-top-left-radius: 10px;
+  /*para que cuando baje tenga el borde así en la parte que pone*/
+  border-top-right-radius: 10px;
+  /*para que cuando baje tenga el borde así en la parte que pone*/
+
+}
+
+nav.active ul li#unoProbando a:hover,
+nav.active ul li#dosProbando a:hover,
+nav.active ul li#tresProbando a:hover,
+nav.active ul li#cuatroProbando a:hover,
+nav.active ul li#cincoProbando a:hover {
+  color: white !important;
+  /*para que cuando se haga scroll y se ponga la sublista amarilla al hacer hover el color se ponga blanco*/
+  transition: all 0.2s ease;
+  /*para que se haga una transición suave a los elementos de la sublista cuando haga scroll*/
+}
+
+nav.active ul li#unoProbando,
+nav.active ul li#dosProbando,
+nav.active ul li#tresProbando,
+nav.active ul li#cuatroProbando,
+nav.active ul li#cincoProbando {
+  background-color: #e8c404;
+  /*cuando esté el nav moviéndose el color esté así*/
+}
+
+nav.active ul li#cincoProbando {
+  border-bottom-left-radius: 10px;
+  /*para que tenga esos bordes redondeados el último elemento de la sublista al hacer scroll*/
+  border-bottom-right-radius: 10px;
+  /*para que tenga esos bordes redondeados el último elemento de la sublista al hacer scroll*/
+}
+
+/* MENU MÓVIL  -> Líneas Menu Móvil*/
+#menuToggle {
+  display: none;
+  /*para que no aparezca la casilla del input*/
+}
+
+#menuToggle:checked~.efectosMenuMovil {
+  visibility: visible;
+  /*para que se aplique bien el filtro de la x cuando le des encima*/
+  opacity: 0.99;
+  /*es necesario para que se cargue el menu*/
+}
+
+#menuToggle:checked~.menuAbierto #linea-menuMovil:before {
+  transform: rotate(45deg);
+  /*para que se haga bien el efecto de la x de los menus*/
+  position: absolute;
+  /*para que las líneas estén bien colocadas*/
+  top: 0;
+  /*para que la segunda línea esté bien colocada*/
+  z-index: 1;
+  /*para que la flecha esté bien colocada*/
+}
+
+#menuToggle:checked~.menuAbierto #linea-menuMovil:after {
+  transform: rotate(-45deg);
+  /*para que estén bien colocadas las flechas*/
+  top: 0;
+  /*para que esté bien colocada las flechas*/
+  z-index: 1;
+  /*para que la flecha ocupe bien la pantalla*/
+}
+
+.menuAbierto {
+  width: 24px;
+  /*el tamaño del menu del móvil de las líneas*/
+  float: right;
+  /*para que estén bien colocados la flecha*/
+}
+
+/*MENÚ MÓVIL -> LÍNEA PRIMERA Y LA DE DEBAJO*/
+#linea-menuMovil.active {
+  background-color: black;
+  /*línea de la mitad del menu toggle en negro cuando se haga scroll*/
+  transition: all 0.3s ease;
+  /*transición suave*/
+}
+
+#linea-menuMovil.active:before {
+  background-color: black;
+  /*línea primera o superior del menú móvil -> en color negro*/
+  transition: all 0.3s ease;
+  /*transición suave*/
+}
+
+#linea-menuMovil.active:after {
+  background-color: black;
+  /*última línea del menu toggle que esté en negro cuando se hace scroll*/
+  transition: all 0.3s ease;
+  /*transición suave*/
+}
+
+#linea-menuMovil {
+  background-color: white;
+  /*color de una de las flechas del burguer menu -> la línea de la mitad*/
+  height: 2px;
+  /*altura del burguer menu -> la línea de la mitad*/
+  border-radius: 2px;
+  /*borde redondeado de dicho burguer menu*/
+  cursor: pointer;
+  /*que el cursor se active*/
+  position: relative;
+  /*que la posición esté ahí, pero que no se descuadre*/
+}
+
+#linea-menuMovil:before {
+  content: "";
+  /*para que aparezca la línea del menu de la línea superior*/
+  background-color: white;
+  /*para que la línea primera esté blanca*/
+  width: 24px;
+  /*anchura de la primera línea*/
+  height: 2px;
+  /*altura de la primera línea*/
+  display: block;
+  /*para que aparezca la línea*/
+  border-radius: 2px;
+  /*para que tenga borde redondeado*/
+  position: relative;
+  /*para que aparezca la primera línea*/
+  top: -8px;
+  /*para que aparezca la línea*/
+  transition: all 0.3s ease;
+  /*para que tenga transición cuando se le dé encima*/
+}
+
+#linea-menuMovil:after {
+  content: "";
+  /*para que aparezca la última línea*/
+  background-color: white;
+  /*para que la línea esté blanca*/
+  height: 2px;
+  /*la altura de la línea*/
+  display: block;
+  /*para que aparezca la línea*/
+  border-radius: 2px;
+  /*para que la línea tenga un borde redondeado*/
+  position: relative;
+  /*para que la línea esté bien colocada*/
+  top: 6px;
+  /*para que la última línea esté bien colocada*/
+  transition: all 0.3s ease;
+  /*para que tenga transición cuando se le dé encima*/
+}
+
+/*MENU MÓVIL -> dentro*/
+.menu {
+  position: fixed;
+  /*para que el menu esté fijo -> aparezca*/
+  width: 100vw;
+  /*si le borro esto aparece en el lateral derecho solo*/
+  /*el ancho que ocupa*/
+  height: 100vh;
+  /*la altura que ocupa*/
+  top: 0;
+  /*para que esté pegado en el top*/
+  left: 0;
+  /*para que esté bien centrado*/
+  background-color: white;
+  /*fondo blanco*/
+  padding-right: none;
+  /*para que ocupe toda la pantalla*/
+  padding-left: 20px;
+}
+
+.menu .contenido_menuMovil {
+  position: relative;
+  /*para que las letras del menu estén bien centrados*/
+  top: 50%;
+  /*para que las letras del menu estén bien centradas*/
+  text-align: center;
+  /*para que las letras estén bien centradas en la mitad*/
+  margin-top: -350px;
+  /*para que estén bien centradas en la mitad las letras del menú*/
+  justify-content: center;
+  /*para que esté centrado*/
+  /*display: flex; /*hacer hover el amarillo para que no ocupe toda la pantalla*/
+}
+
+.menu ul li a {
+  font-size: 25px;
+  /*el tamaño de la letra del menu*/
+  display: block;
+  /*para que el efecto aparezca bien*/
+  text-transform: uppercase;
+  /*para que el texto esté en mayúscula*/
+  padding: 80px;
+  /*para que el relleno de las capas esté en amarillo con ese relleno*/
+}
+
+/*efectos Menu Móvil*/
+.efectosMenuMovil {
+  opacity: 0;
+  /*para que cuando lo cierres no se cierre bruzcamente*/
+  visibility: hidden;
+  /*para que esté escondido hasta que se le dé encima*/
+  transition: opacity 0.5s, visibility 0.5s;
+  /*transición suave*/
+}
+
+/*ESTILOS LETRAS DE DENTRO DEL MENU MÓVIL*/
+.sinViñetas {
+  list-style: none;
+  /*para que las letras de los elementos del menu de dentro no tengan viñetas*/
+}
+
+.sinViñetas li {
+  padding-bottom: 162px;
+  /*separación entre los elementos (texto) de dentro del menu móvil*/
+}
+
+/*línea de debajo de los elementos de los textos de las cajas del menú móvil*/
+.caja {
+  position: relative;
+  /*línea de debajo de la caja de los elementos del menú móvil*/
+  height: 2.5px;
+  /*altura de la línea de debajo de las cajas de los textos de los elementos del menu móvil*/
+}
+
+.caja:hover .borde {
+  width: 100%;
+  /*para que ese borde ocupe todo el div*/
+}
+
+/*EFECTOS -> CAJA AMARILLA -> DEL MENU MÓVIL DE INICIO, ETC*/
+.textos_menumovil {
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #e8c404 50%);
+  /*para que cuando hagas hover se ponga el amarillo al hacer hover*/
+  background-size: 220%;
+  /*para que se haga el efecto bien*/
+  transition: all .4s ease;
+  /*transición suave*/
+  opacity: 0.75;
+  /*para que sea un poco transparente*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente del los textos*/
+  color: black !important;
+  /*color de la letra*/
+}
+
+
+.textos_menumovil:hover {
+  background-position: 100%;
+  /*para que ocupe todo el div al hacer hover*/
+  transform: translateX(1rem);
+  /*para que la transición sea más suave*/
+  opacity: 1;
+  /*para que la opacidad esté bien*/
+  color: black !important;
+  /*color de la letra*/
+}
+
+/*EFECTOS -> DEL BORDE DEL MENU DEL NAV*/
+.borde {
+  position: absolute;
+  /*para que la línea esté bien colocada*/
+  left: 50%;
+  /*para que esté bien colocado el borde*/
+  margin-left: 15px;
+  /*para que la línea esté bien ubicada*/
+  width: 0;
+  /*para que empiece en 0 desde el principio*/
+  height: 100%;
+  /*para que se aplique bien el borde que se le aplique debajo del div*/
+  background-color: #08345c;
+  /*color de fondo del borde*/
+  /*creo que es la línea que aparece debajo de los divs de inicio, etc, del menu móvil*/
+  transform: translateX(-50%);
+  /*para que se aplique bien el efecto*/
+  transition: width 0.3s ease-out;
+  /*para que se aplique bien el efecto*/
+}
+
+/*CREAMOS, MEJORAMOS Y POTENCIAMOS TU ESTABLECIMIENTO EDUCATIVO*/
+.cajaPortafolio {
+  padding-left: 15px;
+  /*para que empiece un poco por la izquiereda con un poco de margen */
+  padding-top: 330px;
+  /*para que el texto esté debajo*/
+}
+
+/*texto_portafolio CREAMOS, MEJORAMOS Y POTENCIAMOS TU ESTABLECIMIENTO EDUCATIVO*/
+.texto_portafolio {
+  font-size: 60px;
+  /*tamaño de la fuente*/
+  color: white;
+  /*para que la letra esté de color blanca*/
+  text-shadow: 2px 2px 4px #000;
+  /*el sombreado*/
+  font-family: "Open Sans", sans-serif;
+  /*fuente*/
+  font-weight: 600;
+  /*tamaño de la fuente*/
+}
+
+/*caja amarilla -> EDUCATIVO*/
+.cajaAmarillaPortafolio {
+  display: inline-block;
+  /*para que la caja solo ocupe lo necesario*/
+  background-color: #e8c404;
+  /*para que la caja sea de dicho color*/
+  padding: 0 5px;
+  /*para que tenga un poco de relleno por ambos lados*/
+  border-radius: 10px;
+  /*para que la caja esté redondeada*/
+  text-shadow: none;
+  /*para que no tenga sombre*/
+}
+
+/*EFECTOS -> EDUCATIVO*/
+#educativo {
+  background: url(img/estiloDetras.png) repeat-y;
+  /*el fondo de detrás de Educativo*/
+  background-clip: text;
+  /*para que se cargue bien el efecto*/
+  -webkit-text-fill-color: transparent;
+  /*para que se cargue bien el efecto*/
+  -webkit-animation: aitf 35s linear infinite;
+  /*duración de la animación*/
+  -webkit-text-stroke: 0.5px #fff;
+  /*lineado blanco de la letra*/
+}
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 100%;
+    /*efecto para el fondo de detrás */
+  }
+
+  100% {
+    background-position: 100% 50%;
+    /*efecto para el fondo de detrás*/
+  }
+}
+
+/*estilos -> TEXTO -> QUE SE VA ESCRIBIENDO*/
+#texto {
+  color: white;
+  /*para que la letra este de ese color blanco*/
+  font-size: 25px;
+  /*tamaño de la fuente*/
+  margin-top: -50px;
+  /*para que el texto de somos tus aliados esté pegado al de creamos etc*/
+  text-shadow: 1px 1px 2px black;
+  /*sombra de los textos de somos tus aliados expertos en educación*/
+  padding-left: 20px;
+  /*margen de somos tus aliados expertos en tu educación*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente de la web*/
+}
+
+/*| de somos tus aliados expertos en educación*/
+#texto::after {
+  content: '';
+  /*para que aparezaca el somos tus aliados |*/
+  display: inline-block;
+  /*para que aparezca |*/
+  background-color: #e8c404;
+  /*color de la |*/
+  width: 3px;
+  /*anchura de |*/
+  height: 18.5px;
+  /*altura de |*/
+  opacity: 0;
+  /*para que parpadea*/
+  margin-bottom: -1px;
+  /*para esté bien ajustado con el texto |*/
+  animation: blink 500ms infinite;
+  /*animación*/
+}
+
+/*animación para que se ponga con color*/
+@keyframes blink {
+  to {
+    opacity: 1;
+    /*para que la | se ponga con color*/
+  }
+}
+
+
+/*saber más -> botón -> estilos*/
+.saber_mas_boton,
+.saber_mas_boton2 {
+  display: inline-block;
+  /*para que cuando hagas hover solo aplique ese div*/
+  padding: 0.5em 1em;
+  /*relleno de saber más*/
+  font-size: 25px;
+  /*tamaño de la fuente*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente de la letra*/
+  color: white;
+  /*color blanco de la fuente*/
+  overflow: hidden;
+  /*para que se haga bien el hover*/
+  border: 1px solid white;
+  /*borde de saber más*/
+  border-radius: 5px;
+  /*borde redondeado*/
+  transition: background 0.3s ease;
+  /*para que la transición sea suave*/
+  font-family: 'Open Sans', sans-serif;
+  /*tipo de fuente*/
+}
+
+.saber_mas_boton {
+  margin-left: 20px;
+  /*para que el botón esté bien margeado*/
+}
+
+
+
+
+
+.saber_mas_boton:before,
+.saber_mas_boton2:before {
+  content: "";
+  /*para que se aplique bien el efecto*/
+  position: absolute;
+  /*para que se aplique bien el efecto*/
+  background: #e8c404;
+  /*para que se aplique bien el color del efecto*/
+  border-radius: 50%;
+  /*para que esté redendodeado*/
+  height: 0;
+  /*para que se aplique bien el efecto*/
+  top: 100%;
+  /*para que se aplique bien el efecto*/
+  left: 50%;
+  /*para que se aplique bien el efecto*/
+  transform: translate(-50%, -50%);
+  /*para que se cargue bien el efecto*/
+  transition: width 0.3s ease, height 0.3s ease;
+  /*para que se cargue bien el efecto*/
+  z-index: -1;
+  /*para que se cargue bien el efecto*/
+}
+
+
+/*saber más al hacer hover*/
+.saber_mas_boton:hover,
+.saber_mas_boton2:hover {
+  background: #e8c404;
+  /*fondo del color del saber más*/
+  border: 1px solid #e8c404;
+  /*borde de saber más*/
+}
+
+.saber_mas_boton:hover:before,
+.saber_mas_boton2:hover:before {
+  width: 200%;
+  /*para que se cargue bien el efecto*/
+  height: 200%;
+  /*para que se cargue bien el efecto*/
+}
+
+
+
+
+
+/*ANIMACIÓN DEL BOTÓN -> saber más*/
+.boton-animado-inicio {
+  animation: shake;
+  /*animación de shake de saber más*/
+  animation-iteration-count: infinite;
+  /*para que se cargue el saber más*/
+  animation-duration: 6s;
+  /*animación y para que se cargue el botón*/
+}
+
+@-webkit-keyframes shake {
+
+  /*animación shake*/
+  4%,
+  16% {
+    transform: translate3d(2px, 0, 0);
+    /*animación del botón*/
+  }
+
+  6%,
+  10%,
+  14% {
+    transform: translate3d(-4px, 0, 0);
+    /*animación del botón*/
+  }
+
+  8%,
+  12% {
+    transform: translate3d(4px, 0, 0);
+    /*animación del borde*/
+  }
+}
+
+/*botón vídeos de yt*/
+#boton-videos-yt {
+  /*position: absolute; /*lo comento para que funcione el efecto de por debajo*/
+  background-color: #e8c404;
+  /*color del fondo del botón*/
+  border: none;
+  /*no tiene borde*/
+  border-radius: 50%;
+  /*para que sea un circulo*/
+  /*left: 225px; /*lo comento, ya que no es necesario*/
+  cursor: pointer;
+  /*para que el cursor se active*/
+  /*top: 645px; /*lo comento, ya que no es necesario*/
+  opacity: 0.75;
+  /*para que al principio esté en opacidad así*/
+  width: 50px;
+  /*anchura del elemento*/
+  height: 50px;
+  /*altura del elemento*/
+  box-shadow: 0 0 0 0 #e8c404;
+  /*parpadeando el efecto amarillo*/
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  /*el efecto parpadeando*/
+  transition: all 300ms ease-in-out;
+  /*transición*/
+}
+
+.botonvideoYT {
+  padding-left: 240px;
+  /*para que esté más a la derecha*/
+  margin-top: -60px;
+  /*para que llevarlo a la parte superior*/
+}
+
+#boton-videos-yt:hover {
+  opacity: 1;
+  /*para que la opacidad esté bien*/
+  transition: all 200ms ease;
+  /*transición suave*/
+}
+
+/*imagen de dentro del vídeo de >*/
+.imagendelbotonmostrarvideosYT {
+  width: 50px;
+  /*tamaño de la imagen*/
+  height: 50px;
+  /*altura de la imagen*/
+  position: relative;
+  /*para que esté medio ajustado*/
+  right: 6px;
+  /*para que esté bien ajustado*/
+  bottom: 1px;
+  /*para que esté bien ajustado*/
+}
+
+/*efectos del vídeo de edudynamis*/
+#videos-yt {
+  z-index: 9999;
+  /*para que el vídeo esté en la parte superior de todo*/
+  display: none;
+  /*para que se pueda mostrar el vídeo*/
+  position: fixed;
+  /*para que esté bien centrado*/
+  top: 50%;
+  /*para que esté bien centrado*/
+  left: 50%;
+  /*para que esté bien centrado*/
+  width: 75%;
+  /*tamaño del vídeo*/
+  height: 80%;
+  /*altura del vídeo*/
+  background: rgba(0, 0, 0, 0.75);
+  /*efecto de detrás del vídeo*/
+  padding-left: 200px;
+  /*para que tenga relleno por la izquierda*/
+  padding-right: 200px;
+  /*para que tenga relleno por la derecha*/
+  padding-top: 200px;
+  /*para que tenga relleno por la parte superior*/
+  padding-bottom: 200px;
+  /*para que tenga relleno por la parte inferior*/
+  opacity: 0;
+  /*para que de primeras tenga la opacidad en 0*/
+  transition: opacity 0.5s ease-in-out;
+  /*para que aparezca suavemente*/
+  transform: translate(-50%, -50%);
+  /*para que esté bien colocado*/
+}
+
+#videos-yt.mostrarVideosYT {
+  opacity: 1;
+  /*para que aparezca cuando le das encima del botón*/
+}
+
+/*EL BOTÓN DE CERRAR EL VÍDEO*/
+#cerrarVideo {
+  border: 1px solid rgba(139, 0, 0, 0.5);
+  /*borde*/
+}
+
+#cerrarVideo,
+#irAtrasVideo,
+#irAdelanteVideo {
+  position: absolute;
+  /*para que esté bien colocado el botón rojo de cerrar*/
+  cursor: pointer;
+  /*para que se ponga el cursor cuando le des encima de lo rojo*/
+  background: none;
+  /*para que no tenga fondo*/
+  font-size: 25px;
+  /*tamaño de las fechas y de la letra x */
+  color: #fff;
+  /*para que las flechas estén en color blanco*/
+}
+
+#cerrarVideo:hover p {
+  display: inline !important;
+  /*para que aparezca el botón o sea la x*/
+  transition: all 0.2s ease;
+  /*transición suave*/
+}
+
+#cerrarVideo {
+  top: 215px;
+  /*posición en la parte top*/
+  right: 215px;
+  /*posición del botón de cerrar*/
+  width: 25px;
+  /*anchura del botón de cerrar*/
+  height: 25px;
+  /*altura del botón de cerrar*/
+  border-radius: 50%;
+  /*para que el botón esté cerrado*/
+  background-color: #f05c58;
+  /*color del fondo del botón*/
+  display: flex;
+  /*para que la x esté centrada*/
+  justify-content: center;
+  /*para que la x esté centrada*/
+  align-items: center;
+  /*para que la x esté centrada*/
+  color: #800404;
+  /*color de la x*/
+}
+
+/*la x del botón de cerrar*/
+.laXdelaCaja {
+  display: none;
+  /*para que la x no aparezca de primeras*/
+  transition: all 0.2s ease;
+  /*transición suave de la x*/
+}
+
+#irAtrasVideo,
+#irAdelanteVideo {
+  border: none;
+  /*para que no tenga borde las flechas*/
+}
+
+#irAtrasVideo,
+#irAdelanteVideo {
+  bottom: 50%;
+  /*para que las flechas estén centrados*/
+  opacity: 0.25;
+  /*para que la flecha de primeras tenga esa opacidad*/
+}
+
+#irAtrasVideo {
+  left: 215px;
+  /*posición que ocupa el botón de ir hacia atrás*/
+}
+
+#irAtrasVideo:hover,
+#irAdelanteVideo:hover {
+  opacity: 0.5 !important;
+}
+
+#irAdelanteVideo {
+  right: 215px;
+  /*botón de la flecha de la derecha*/
+}
+
+/*el vídeo del portrait*/
+#video-yt-cargado {
+  width: 100%;
+  /*anchura del vídeo*/
+  border-radius: 15px;
+  /*para que tenga el borde redondeado*/
+}
+
+/*BOTÓN DE WHATSAPP*/
+.todoelchat {
+  display: none;
+  /*para que pueda abrir el botón de whatsapp desde cualquier parte*/
+}
+
+.todoelchat:checked+.whatsapp_icono_segundo label {
+  transform: rotate(360deg);
+  /*necesario para que gire bien el icono de whatsapp*/
+}
+
+.todoelchat:checked+.whatsapp_icono_segundo label svg.icono-primero-chat {
+  display: none;
+  /*para que las imágenes no se mezclen a la hora de girar*/
+}
+
+.todoelchat:checked+.whatsapp_icono_segundo label svg.close-icon {
+  display: table-cell;
+  /*para que aparezca la imagen de dentro*/
+}
+
+.todoelchat:checked+.whatsapp_icono_segundo+.mandenosunmensaje_yasesoresponderá {
+  bottom: 90px;
+  /*después de darle a la imagen me pone los dos divs de arriba en una buena posición*/
+  opacity: 1;
+  /*para que aparezca*/
+}
+
+.whatsapp_icono_segundo {
+  position: fixed;
+  /*para que el botón no ocupe toda la pantalla sino solo una parte*/
+  bottom: 20px;
+  /*para que esté bien ajustado*/
+  right: 20px;
+  /*para que esté bien ajustado*/
+  border-radius: 50px;
+  /*para que sea circular*/
+  z-index: 9999;
+  /*la posición  que ocupa el botón de whatsapp*/
+}
+
+.whatsapp_icono_segundo svg {
+  margin: auto;
+  /*para que quede bien ajustado*/
+  fill: white;
+  /*para que el relleno sea de color blanco*/
+  width: 35px;
+  /*anchura del ícono*/
+  height: 35px;
+  /*altura del ícono*/
+}
+
+.whatsapp_icono_segundo label {
+  cursor: pointer;
+  /*para que tenga el cursor encima*/
+  display: flex;
+  /*para que tenga bien el relleno*/
+  width: 55px;
+  /*tamaño de la capa*/
+  height: 55px;
+  /*altura de la capa*/
+  transition: all 0.3s ease-out;
+  /*transición suave para que se gire*/
+}
+
+.whatsapp_icono_segundo label svg.close-icon {
+  display: none;
+  /*para que el icono aparezca bien colocado*/
+}
+
+/*el botón de whatsapp -> ondas*/
+.whatsapp_icono_primero {
+  background-color: #42db87;
+  /*color de fondo -> del botón de whatsapp*/
+  box-shadow: 0 0 0 0 #42db87;
+  /*ondas de color verde*/
+  animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  /*animación de las ondas verdes*/
+  transition: all 300ms ease-in-out;
+  /*transición suave*/
+  opacity: 0.75;
+  /*para que al principio esté con un poco de opacidad*/
+}
+
+.whatsapp_icono_primero:hover {
+  opacity: 1;
+  /*para que cuando le des encima*/
+  transition: all 300ms ease-in-out;
+  /*transición suave*/
+  z-index: 9999;
+  /*posición que ocupa el ícono*/
+}
+
+/*el tamaño de los divs de mandenos un mensaje y el administrador le responderá*/
+.mandenosunmensaje_yasesoresponderá {
+  position: fixed;
+  /*para que aparezca la caja del chat*/
+  bottom: 70px;
+  /*para que venga desde abajo el cajón de chat*/
+  right: 20px;
+  /*para que esté bien colocado*/
+  transition: all 0.3s ease-out;
+  /*para que tenga una transición suave*/
+  opacity: 0;
+  /*para que de primeras no aparezca*/
+  z-index: 9999;
+  /*posición que ocupa para que el chat esté bien posicionado*/
+}
+
+/*un administrador le responderá en unos minutos*/
+.hableconnuestroequipo {
+  border-radius: 10px;
+  /*borde de hable con nuestro equipo*/
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  /*para que ese div tenga un poco de sombreado*/
+  overflow: hidden;
+  /*para que esté bien*/
+}
+
+.backgrounddivhableconnuestroequipo {
+  display: flex;
+  /*para que hable con nuestro equipo esté bien colocado*/
+  padding: 15px 20px;
+  /*relleno de hable con nuestro equipo*/
+  background-color: #42db87;
+  /*color del fondo de hable con nuestro equipo*/
+}
+
+.icono-mensaje-header-whatsapp {
+  height: 35px;
+  /*altura del ícono de mensaje de hable con nuestro equipo*/
+  fill: white;
+  /*para que el ícono de mensaje de hable con nuestro equipo sea de color blanco*/
+}
+
+.hableconnuestroyunasesorleresponderá {
+  padding-left: 15px;
+  /*para que tenga un relleno, es decir, que haya espacio entre el ícono de mensaje y las letras*/
+  color: white;
+  /*para que las letras estén de color blanco*/
+}
+
+/*Un asesor le responderá en unos minutos*/
+.mensajeAsesorLeRespondera {
+  font-size: 11px;
+  /*tamaño de la fuente*/
+  display: block;
+  /*para que esté bien colocado debajo*/
+  font-family: 'Open Sans', sans-serif
+    /*fuente del texto*/
+}
+
+/*mandenos un mensaje*/
+.mandenosunmensaje {
+  display: flex;
+  /*para que ocupe una buena posición*/
+  margin-top: 15px;
+  /*para que no esté pegado del div de un asesor le responderá*/
+  padding: 12px 20px;
+  /*para que tenga relleno por todas partes*/
+  border-radius: 10px;
+  /*para que el borde esté redondeado*/
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+  /*para que tenga sombra*/
+  font-size: 14px;
+  /*tamaño de la fuente*/
+  opacity: 0.75;
+  /*para que de primeras la opacidad esté así*/
+  background-color: white;
+  /*para que el fondo sea blanco*/
+  color: #505050;
+  /*color de la letra*/
+  transition: all 0.2s ease;
+  /*para que tenga transición suave*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente del texto*/
+}
+
+/*mandenos un mensaje cuando esté el cursor encima*/
+.mandenosunmensaje:hover {
+  opacity: 1;
+  /*para que ya se vea totalmente brilloso*/
+}
+
+/*el icono de enviar*/
+.mandenosunmensaje svg {
+  height: 20px;
+  /*tamaño del botón del enviar*/
+  margin-left: auto;
+  /*para que el icono no esté pegado del texto*/
+  transform: rotate(40deg);
+  /*para que el icono esté bien colocado*/
+  opacity: 0.75;
+  /*para que la opacidad de primeras esté así*/
+  transition: all 0.2s ease;
+}
+
+/*el icono de enviar cuando se esté encima de mandenos un mensaje*/
+.mandenosunmensaje:hover svg {
+  opacity: 1;
+  /*para que cuando le des encima el icono esté en esa opacidad*/
+}
+
+
+/*SECCIÓN 2 DE LA WEB -> Nuestros Servicios*/
+/*seccion 2 -> web -> portafolio -> Nuestros Servicios*/
+.SomosTusAliados {
+  padding-top: 100px;
+  /*releno superior de Nuestro Servicios*/
+}
+
+/*texto de Nuestros Servicios*/
+.SomosTusAliados2 {
+  text-align: center;
+  /*para que el texto Nuestros Servicios esté centrado*/
+  font-size: 40px;
+  /*tamaño de la fuente -> de nuestro servicios recordar que está en 40px*/
+  color: #08345c;
+  /*color de letra Nuestros Servicios*/
+}
+
+/*Te ayudamos a materializar...*/
+.textoEnEduDynamisAsesoresEducativos {
+  font-size: 20px;
+  /*tamaño de la fuente*/
+  text-align: center;
+  /*para que el texto esté centrado*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente del texto*/
+  margin-top: -25px;
+  /*para que el texto esté bien ajustado con Nuestros Servicios*/
+}
+
+/*CARTAS DE NUESTROS SERVICIOS*/
+.cartasContenido {
+  display: grid;
+  /*para que cada una de las cajas estén organizadas*/
+  grid-gap: 1rem;
+  /*para que estén separada cada una de las cajas con un poco de espacio*/
+  padding: 1rem;
+  /*para que tenga un poco de margen las cajas con respecto a lo demás*/
+  padding-bottom: 5rem;
+  /*para que haya un margen por debajo bueno*/
+  grid-template-columns: repeat(5, 1fr);
+  /*para que se organicen en 5 cajas y cada una ocupe 1 posición*/
+}
+
+.carta_servicios {
+  position: relative;
+  /*para que el efecto solo se ocupe en las cartas*/
+  display: flex;
+  /*para que estén bien organizadas las cajas*/
+  overflow: hidden;
+  /*para que se aplique bien el efecto*/
+  text-align: center;
+  /*para que el texto esté centrado*/
+  color: white;
+  /*para que el texto esté de color blanco*/
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+  /*sombreado de las cajas*/
+  cursor: pointer;
+  /*para que al pasar por encima de las cajas se active el cursor*/
+  height: 400px;
+  /*altura de cada una de las cajas*/
+}
+
+/*efectos de las imágenes de las cartas de Nuestros Servicios*/
+.carta_servicios:before {
+  content: '';
+  /*para que aparezcan las imágenes*/
+  position: absolute;
+  /*para que las imágenes estén bien colocadas*/
+  top: 0;
+  /*para que las imágenes no se muevan cuando se haga el efecto*/
+  width: 100%;
+  /*para que se muestre bien las imágenes*/
+  height: 110%;
+  /*para que se muestren bien las imágenes*/
+  background-size: cover;
+  /*para que la imagen esté bien colocada*/
+}
+
+.carta_servicios:after {
+  content: '';
+  /*para que se aplique bien el efecto*/
+  position: absolute;
+  /*para que se aplique bien el efecto*/
+  top: 0;
+  /*para que se aplique bien el efecto*/
+  width: 100%;
+  /*para que se aplique bien el efecto*/
+  height: 200%;
+  /*para que se aplique bien el efecto*/
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+  /*el color del efecto que se le aplica*/
+}
+
+.carta_servicios:nth-child(1):before {
+  background-image: url(img/educacionparaeldesarrolloyeltrabajo.jpeg);
+  /*imagen 1 de la carta 1*/
+}
+
+.carta_servicios:nth-child(2):before {
+  background-image: url(img/educacionformal.jpeg);
+  /*imagen 2 de la carta 2*/
+}
+
+.carta_servicios:nth-child(3):before {
+  background-image: url(img/escuelasnormalesuperiores.jpeg);
+  /*imagen 3 de la carta 3*/
+}
+
+.carta_servicios:nth-child(4):before {
+  background-image: url(img/marketingdigital.jpeg);
+  /*imagen 4 de la carta 4*/
+}
+
+.carta_servicios:nth-child(5):before {
+  background-image: url(img/asesorías.jpeg);
+  /*imagen 4 de la carta 4*/
+}
+
+
+.contenido_carta_servicios {
+  transition: all 0.5s ease;
+  /**transición suave en la que se suben los textos*/
+  z-index: 1;
+  /*para que los textos ocupen las posición de por delante en las cartas*/
+}
+
+.contenido_carta_servicios {
+  transform: translateY(82.5%);
+  /*desde donde parten los textos para llegar hasta la mitad*/
+}
+
+.carta_servicios:hover .contenido_carta_servicios {
+  transform: translateY(0%);
+  /*hasta donde suban los textos de la caja de los servicios*/
+}
+
+.carta_servicios:hover {
+  align-items: center;
+  /*para que al hacer hover encima de las cartas estén los elementos centrados*/
+}
+
+.carta_servicios:hover:after {
+  transform: translateY(-50%);
+  /*para que se carge bien el efecto de darle encima de las cartas cajas*/
+}
+
+.textos_especiales_cajas {
+  margin-top: -20px;
+  /*para que el texto de Educación para el Trabajo -> esté bien puesto -> posicionado*/
+}
+
+.textos_especiales_cajas2 {
+  margin-top: -5px;
+  /*para que el texto de Educación para el Trabajo -> esté bien puesto -> posicionado*/
+}
+
+/*DESCRIPCIÓN  DE LAS CARTAS */
+.descripcionCartas {
+  font-family: 'Open Sans', sans-serif;
+  /*fuente del texto*/
+  cursor: text;
+  /*para que cuando el cursor esté encima esté |*/
+  padding: 0px 10px 0px 10px;
+}
+
+/*botón de la flecha de -> de la segunda sección de Nuestros Servicios*/
+.saber_mas_boton3 {
+  display: inline-block;
+  /*para que se ocupe bien el div al hacer :hover*/
+  padding: 0.5em 1em;
+  /*relleno del botón*/
+  overflow: hidden;
+  /*para que se aplique bien el efecto*/
+  border: 2px solid #fff;
+  /*para que el borde sea con ese pixel*/
+  border-radius: 5px;
+  /*borde redondeado*/
+  transition: background 0.3s ease;
+  /*transición suave*/
+}
+
+/*el botón de las flechas al hacer hover*/
+.saber_mas_boton3:hover {
+  background: #e8c404;
+  /*el botón de amarillo al hacer hover*/
+  border: 2px solid #e8c404;
+  /*el borde del botón para que sea amarillo*/
+}
+
+/*BOTÓN -> FLECHA*/
+.flecha_1 {
+  position: relative;
+  /*para que la flecha de los botones esté bien colocado*/
+  animation: moverFlechaHaciaDerecha 0.5s infinite alternate;
+  /*animación para que se mueva la flecha*/
+  padding: 10px;
+  /*relleno del botón*/
+}
+
+
+/*efectos para la línea de la flecha*/
+.linea_1 {
+  width: 20px;
+  /*para que la línea ocupe esa línea*/
+  height: 1px;
+  /*para que la línea esté así*/
+  background-color: white;
+  /*el color de la línea*/
+}
+
+/*PUNTAS DE LA FLECHA*/
+.punta_1 {
+  border-top: 7.5px solid transparent;
+  /*FLECHA PARTE DE ARRIBA*/
+  border-bottom: 7.5px solid transparent;
+  /*FLECHA PARTE DE ABAJO*/
+  border-left: 7.5px solid white;
+  /*tamaño de la punta de la flecha*/
+  position: absolute;
+  /*para que esté bien colocada la punta de la flecha*/
+  left: 25px;
+  /*para que esté la línea bien pegada con la punta*/
+  transform: translateY(-50%);
+  /*para que la punta esté centrada con la flecha*/
+}
+
+/*ANIMACIÓN DE LA FLECHA*/
+@keyframes moverFlechaHaciaDerecha {
+  0% {
+    left: -15px;
+    /*empieza desde -15px*/
+  }
+
+  100% {
+    left: 15px;
+    /*donde termina el efecto*/
+  }
+}
+
+/*capa de ¿Quiénes Somos?*/
+.capaEncimaQuienesSomos {
+  align-items: center;
+  /*para que los elementos estén centrados*/
+  display: flex;
+  /*para que los elementos estén bien colocados*/
+  min-height: 700px;
+  /*para que el div ocupe bien el texto*/
+}
+
+/*capa de ¿Quiénes Somos? -> filtro, ancho y textos*/
+.estiloGifQuienesSomos {
+  position: absolute;
+  /*que esté bien colocado la div y la capa de quienes somos*/
+  width: 100%;
+  /*lo que ocupa de ancho ese div capa*/
+  filter: brightness(50%)
+    /*el filtro que se le aplica a la capa de quienes somos*/
+}
+
+/*FORMATO -> DE ¿QUIÉNES SOMOS?*/
+.capa-texto-quienessomos {
+  z-index: 1
+    /*para que no desaparezca el quienes somos*/
+}
+
+/*para que la capa de ¿Quiénes Somos? -tenga relleno por la izquierda y por la derecha*/
+.rellenosCapaTextoQuienesSomos {
+  padding: 0px 20px;
+}
+
+.rellenosCapaTextoQuienesSomos p {
+  text-align: justify;
+  /*para que el texto esté justificado*/
+  line-height: 1.6;
+  /*salto de línea del texto*/
+  width: 50%;
+  /*para que ocupe la mitad ese texto*/
+  font-size: 18px;
+  /*el tamaño de la letra*/
+}
+
+.qsh2 {
+  color: white;
+  /*para que la letra de quienes somos aparezca de color blanco*/
+  font-size: 40px;
+  /*tamaño de la letra*/
+}
+
+
+.textoEnEduDynamisAsesoresEducativos2 {
+  font-family: 'Open Sans', sans-serif;
+  /*letra de ese texto*/
+  color: white;
+  /*color de la letra */
+}
+
+
+/*es una clase para que se aplique una letra diferente a algunos textos*/
+.textoGenty {
+  font-family: 'GentySansRegular', sans-serif;
+}
+
+/*CIRCULO -> DE LA CAPA DE ¿QUIÉNES SOMOS?*/
+.circuloqs {
+  position: relative;
+  /*para que se encuentre bien el circulo del div*/
+  display: flex;
+  /*para que se cargue el circulo bien no la mitad*/
+  justify-content: center;
+  /*para que esté centrado en la mitad */
+  align-items: center;
+  /*para que funcione cuando le das encima*/
+  width: 100%;
+  /*para que se cargue bien el contorno*/
+  right: 200px;
+  /*para que esté bien colocado en la capa*/
+}
+
+.circuloqs .video_circuloqs {
+  height: 100vh;
+  /*altura del vídeo*/
+  /*overflow: hidden;*/
+  /*align-items: center;*/
+  clip-path: circle(50px at right);
+  /*tamaño del circulo*/
+  transition: clip-path .4s ease;
+  /*transición suave*/
+}
+
+.circuloqs .video_circuloqs video {
+  position: fixed;
+  /*para que aparezca el circulo*/
+  top: 50%;
+  /*para que esto cargue bien*/
+  /*left: 50%;*/
+  /*min-width: 100%;*/
+  /*min-height: 100%;*/
+  /*width: 100%; /*para que el circulo esté bien*/
+  /*height: 100%;*/
+  transform: translate(-50%, -50%);
+  /*para que el elemento esté bien centrado*/
+}
+
+.circuloqs .input_circuloqs {
+  width: 125px;
+  /*la anchura del circulo*/
+  height: 125px;
+  /*la altura del circulo*/
+  margin: auto;
+  /*para que esté bien centrado*/
+  position: absolute;
+  /*para que este bien centrado con respecto al circulo*/
+  left: 0;
+  /*para que esté bien centrado con respecto al circulo*/
+  right: 0;
+  /*para que esté bien centrado con respecto al circulo*/
+  border-radius: 50%;
+  /*para que sea un circulo*/
+  /*outline: none;*/
+  z-index: 2;
+  /*para que esté por encima*/
+  appearance: none;
+  /*para que sea un circulo*/
+  cursor: pointer;
+  /*para que el cursor esté activo*/
+}
+
+/*.circuloqs .input_circuloqs:focus {
+				/*outline: 0;
+			}*/
+
+.circuloqs .input_circuloqs:hover~.video_circuloqs {
+  clip-path: circle(125px at left);
+  /*el tamaño de cuando le das encima se ponga de ese tamaño*/
+}
+
+.circuloqs .input_circuloqs:checked {
+  width: 525px;
+  /*ancho del circulo*/
+  height: 525px;
+  /*altura del circulo*/
+  border-radius: 50%;
+  /*para que sea un circulo*/
+  margin-left: -125px;
+  /*para que esté centrado*/
+}
+
+.circuloqs .input_circuloqs:checked~.video_circuloqs {
+  clip-path: circle(22.5vw);
+  /*tamaño del vídeo*/
+}
+
+/*FORMULARIO*/
+.formularioContacto1 {
+  justify-content: center;
+  /*para que el formulario esté centrado*/
+  display: flex;
+  /*para que las cajas solo ocupen la mitad*/
+  padding-top: 100px;
+  /*para que tenga un ancho por la parte superior */
+  padding-bottom: 150px;
+  /*para que tenga un margen por debajo*/
+}
+
+.tamañoFormularioContacto {
+  flex-basis: 50%;
+  /*para que el formulario ocupe la mitad*/
+}
+
+/*estilos contacto*/
+.formularioEduDynamis {
+  display: flex;
+  /*para que esté bien organizada*/
+  flex-wrap: wrap;
+  /*para que esté bien organizado*/
+  gap: 15px;
+  /*separación entre los elementos del contacto*/
+}
+
+.formularioEduDynamis>* {
+  flex: 0 0 100%
+    /*para que esté bien organizado el contacto*/
+}
+
+/*ANIMACIÓN POR LA IZQUIERDA */
+.porlaizquierda {
+  opacity: 0;
+  /*es necesario*/
+  transform: translateX(-100%);
+  /*animación*/
+  animation: entradaDesdeLaIzquierda 1s ease-out forwards;
+  /*lo que dura la animación*/
+}
+
+@keyframes entradaDesdeLaIzquierda {
+  to {
+    opacity: 1;
+    /*para que cargue bien*/
+    transform: translateX(0);
+    /*hasta donde debe llegar*/
+  }
+}
+
+/*por la derecha*/
+.porladerecha {
+  opacity: 0;
+  /*es necesario*/
+  transform: translateX(100%);
+  /*la animación hasta donde se mueve*/
+  animation: entradaDesdeLaDerecha 1s ease-out forwards;
+  /*animación*/
+
+}
+
+@keyframes entradaDesdeLaDerecha {
+  to {
+    opacity: 1;
+    /*es necesario*/
+    transform: translateX(0);
+    /*hasta donde tiene que moverse*/
+  }
+}
+
+/*inicio -> estilos de la cajas de los contacto*/
+.efectosDivsContacto:focus {
+  border-bottom: 2px solid #08345c;
+  /*para que la línea se ponga de dicho color*/
+  border-radius: 0px !important;
+  /*para que no se ponga bordeado lo de arriba*/
+  transition: 0.2s;
+  /*tiempo de la transición*/
+}
+
+.efectosDivsContacto:focus~.titularesContacto {
+  font-size: 12px;
+  /*tamaño de la letra de los rellenos del formulario cuando te pones en dicho campo*/
+  top: 0;
+  /*la posición donde se pone dichos textos*/
+  transform: translateY(0)
+    /*donde se ponen los textos*/
+}
+
+.efectosDivsContacto {
+  border-radius: 5px;
+  /*borde redondeado de los campos del formulario*/
+  background-color: #f9f9f9;
+  /*color de fondo de las cajas del formulario*/
+  border: 0px solid;
+  /*para que las cajas no tengan borde*/
+  padding: 16px;
+  /*relleno de los campos*/
+  width: 95%;
+  /*tamaño de los cajones*/
+  outline: 0
+    /*para que cuando le des encima no se aplique ningún filtro*/
+}
+
+.titularesContacto {
+  left: 15px;
+  /*posición del texto nombre, etc*/
+  pointer-events: none;
+  /*para que cuando le des encima se desplace*/
+  position: absolute;
+  /*para que esté bien colocado*/
+  top: 50%;
+  /*para que se mueva*/
+  transform: translateY(-50%);
+  /*para que vuelva a la posición correcta*/
+  transition: all .15s cubic-bezier(.4, 0, .2, 1);
+  /*para que tenga una transición aunque sea*/
+  color: gray;
+  /*color de las letras del contacto*/
+}
+
+.titularMensajeContacto .titularesContacto {
+  top: 15px;
+  /*donde debe de estar colocado la letra del mensaje*/
+}
+
+.letrasContacto {
+  font-family: 'Open Sans', sans-serif;
+  /*letras de contacto*/
+}
+
+.efectosDivsContacto_Mensaje {
+  height: 200px;
+  /*altura de la capa de mensaje*/
+}
+
+/*inicio -> estilos del botón enviar*/
+#enviar {
+  background-color: #e8c404;
+  /*color del fondo del botón de enviar*/
+  transition: 0.2s ease-in-out;
+  /*lo que dura la transición*/
+  border: none !important;
+  /*que no tenga borde dicho botón*/
+  font-size: 15px;
+  /*tamaño del texto*/
+  padding: 15px 0px;
+  /*relleno del botón*/
+  border-radius: 10px;
+  /*borde redondeado del botón*/
+  justify-content: center;
+  /*para que los elementos estén centrados*/
+  cursor: pointer;
+  /*cursor*/
+  display: inline-flex;
+  /*para que la animación carga bien*/
+}
+
+#enviar:hover>#imagen_prueba {
+  transform: translateY(-1000px);
+  /*para la imagen se mueva hasta ahí*/
+}
+
+#enviar:hover>#imagen_prueba2 {
+  transform: translateY(0px);
+  /*para la imagen se mueva hasta ahí*/
+}
+
+#enviar>#imagen_prueba2 {
+  transform: translateY(40px);
+  /*para la imagen se mueva hasta ahí*/
+  transition: all 200ms;
+  /*transición*/
+  color: white;
+  /*color del texto "enviar"*/
+  font-weight: 50;
+  /*para que la letra esté fina*/
+  margin-left: -30px;
+  /*para que esté bien colocado todo*/
+}
+
+/*FOOTER*/
+.footer {
+  position: relative;
+  /*para que se carguen bien las olas */
+  background: #08345c;
+  /*color del footer*/
+}
+
+/*LAS OLAS DEL FOOTER*/
+.ola {
+  position: absolute;
+  /*posición de las olas*/
+  top: -100px;
+  /*posición de las olas*/
+  width: 100%;
+  /*tamaño de las olas*/
+  height: 100px;
+  /*tamaño de las olas*/
+  background: url("img/wave.png");
+  /*src de las olas*/
+  background-size: 1000px 100px;
+  /*tamaño de las olas*/
+}
+
+.ola#ola1 {
+  animation: animateWaves 4s linear infinite;
+  /*para que la ola 1 se mueva*/
+}
+
+.ola#ola2 {
+  opacity: 0.5;
+  /*opacidad de las olas*/
+  animation: animate 4s linear infinite;
+  /*para que la ola 2 se mueva*/
+}
+
+.ola#ola3 {
+  opacity: 0.2;
+  /*opacidad de las olas*/
+  animation: animateWaves 3s linear infinite;
+  /*para que la ola 3 se mueva*/
+}
+
+.ola#ola4 {
+  opacity: 0.7;
+  /*opacidad de las olas*/
+  animation: animate 3s linear infinite;
+  /*para que la ola 4 se mueva*/
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+    /*para que se animen las olas*/
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+    /*para que se animen las olas*/
+  }
+}
+
+/*estilos letras y relleno del footer*/
+.estilosFooter {
+  color: white;
+  /*color de las letras del footer */
+  padding-bottom: 20px;
+  /*para que tenga un poco de ancho por debajo */
+}
+
+/*para que no tenga viñeta*/
+.listasFooter {
+  list-style: none;
+  /*para que no tenga viñeta*/
+}
+
+
+/*letra teléfono, email, etc*/
+.titulosFooter {
+  font-weight: bold;
+  /*para que la letra esté negrita*/
+  margin-bottom: 0px;
+  /*para que no esté muy separados*/
+  font-size: 20px;
+  /*tamaño de la letra*/
+}
+
+/*contenido teléfono, ubicación*/
+.subtitulosFooter {
+  font-size: 15px;
+  /*tamaño de la letra*/
+  color: white;
+  /*color de la letra*/
+  font-family: 'Open Sans', sans-serif;
+  /*fuente de la letra*/
+}
+
+/*estilos Redes Sociales -> Footer*/
+.estilosRedesSocialesFooter {
+  float: right;
+  /*para que las redes sociales estén a la derecha*/
+  margin-top: -85px;
+  /*organización de las redes sociales*/
+  padding-right: 30px;
+  /*organización de las redes sociales*/
+  list-style: none;
+  /*para que no tenga viñetas*/
+}
+
+.estilosredessocialestextoypadding {
+  display: flex;
+  /*suficiente padding para los iconos de las redes sociales*/
+  font-family: sans-serif;
+  /*letra de siguenos en */
+}
+
+.red-social-instagram,
+.red-social-youtube,
+.red-social-twitter,
+.red-social-facebook {
+  padding: 4px;
+  /*relleno de los iconos*/
+  border-radius: 10px;
+  /*borde redondeado*/
+  border: 2px solid;
+  /*borde*/
+  color: white;
+  /*para que los botones sean blancos*/
+  margin-right: 0.4em;
+  /*para que los botones estén un poco separados*/
+}
+
+.red-social-instagram:hover,
+.red-social-youtube:hover,
+.red-social-twitter:hover,
+.red-social-facebook:hover {
+  color: #e8c404;
+  /*color amarillo al hacer :hover*/
+}
+
+.efecto_porencimadelbotondelasredessociales {
+  position: relative;
+  /*necesario para que quede bien colocado lo síguenos*/
+}
+
+.efecto_porencimadelbotondelasredessociales:before,
+.efecto_porencimadelbotondelasredessociales:after {
+  --scale: 0;
+  /*necesario para que quede bien colocado el síguenos*/
+  position: absolute;
+  /*para que no aparezcan de primeras*/
+  top: -0.25rem;
+  /*donde debe de quedar bien*/
+  left: 50%;
+  /*para que esté bien colocado*/
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+  /*para que esté bien colocado*/
+  transition: 0.15s transform;
+  /*la transición*/
+}
+
+.efecto_porencimadelbotondelasredessociales:before {
+  --translate-y: -40px;
+  /*para que esté bien colocado*/
+  content: attr(data-tooltip);
+  /*para que aparezca síguenos*/
+  color: #08345c;
+  /*para que la letra sea azul*/
+  font-size: 0.85rem;
+  /*tamaño de la fuente*/
+  padding: 0.4rem 0.6rem;
+  /*relleno de síguenos*/
+  width: max-content;
+  /*para que esté bien colocado síguenos*/
+  background: white;
+  /*para que el fondo sea blanco*/
+  border-radius: 0.3rem;
+  /*para que el borde esté redondeado*/
+}
+
+.efecto_porencimadelbotondelasredessociales:hover:before,
+.efecto_porencimadelbotondelasredessociales:hover:after {
+  --scale: 1;
+  /*para que aparezca bien el síguenos*/
+}
+
+.efecto_porencimadelbotondelasredessociales:after {
+  --translate-y: -7.5px;
+  /*para que se organice bien*/
+  content: "";
+  /*para que se organice bien*/
+  border: 8px solid transparent;
+  /*para que esté bien organizado*/
+  border-top-color: #e8c404;
+  /*color de la flecha*/
+  margin-top: -1px;
+  /*para que esté bien organizado*/
+}
+
+.botonRedSocial svg {
+  fill: currentColor;
+  /*para que se ponga del color que esté en el momento*/
+}
+
+.botonRedSocial svg {
+  /*tamaño y altura de los iconos de las redes sociales*/
+  width: 1.4em;
+  /*ancho*/
+  height: 1.4em;
+  /*altura*/
+}
+
+.footerCopyRight {
+  float: right;
+  /*para que el copy esté a la derecha*/
+  margin-top: -35px;
+  /*para que el copy esté bien*/
+  padding-right: 30px;
+  /*para que el copy esté bien colocado*/
+  list-style: none;
+  /*para que las viñetas estén bien colocadas*/
+}
+
+.fuenteCopyRight {
+  font-size: 15px;
+  /*tamaño de la fuente*/
+  margin-top: 0px;
+  /*para que esté bien colocada*/
+  font-family: 'Open Sans', sans-serif
+    /*letra de la fuente*/
+}
+
+/*FUENTE DE LA WEB*/
+@font-face {
+  font-family: "GentySansRegular";
+  src: url("GentySans-Regular/GentySans-Regular.woff2") format("woff2"),
+    url("GentySans-Regular/GentySans-Regular.woff") format("woff");
+}
+
+/*GLOBALES*/
+body {
+  margin: 0;
+  /*para que la web no tenga margen*/
+  font-family: "GentySansRegular", sans-serif;
+  /*la fuente de la web*/
+}
+
+
+a {
+  cursor: pointer; /*para que todos los enlaces tengan el cursor*/
+  text-decoration: none; /*para que los enlaces no tengan estilos*/
+}
+
+nav {
+  margin-left: -20px !important;
+  /*eso es para que el nav esté bien centrado y colocado*/
+  top: 0;
+  /*para que no me deje margen por arriba en el nav*/
+  z-index: 1000;
+  /*la posición que ocupa el nav frente a los otros para que quede bien por encima de los demás*/
+  /*background-color: transparent;*/
+  position: fixed;
+  /*que esté fijo*/
+  width: 100%;
+  /*el tamaño del nav*/
+  padding-right: 20px;
+  /*para que el nav ocupe bien la pantalla*/
+  padding-left: 20px;
+  /*para que el menu aparezca bien*/
+  transition: 0.2s ease; /*transición*/
+}
+
+nav.active {
+  background-color: white; /*cuando se hace scroll el fondo blanco*/
+  box-shadow: 0px 0px 5px 0px rgba(11, 11, 11, 0.5);
+  /*la sombra del nav de color azul oscuro*/
+}
+
+nav.active ul li a {
+  color: black !important;
+  /*cuando esté el nav moviéndose el color esté así*/
+}
+
+nav ul li a {
+  color: white ;
+  /*el color de los enlaces del nav de primeras*/
+}
+
+nav ul li a:hover {
+  color: #e8c404 !important;
+  /*el color de los enlaces del nav cuando hagas hover*/
+}
+
+/*animación para que parpadeen los botones con las ondas*/
+@keyframes pulsing {
+  to {
+    box-shadow: 0 0 0 30px rgba(0, 255, 89, 0);
+  }
+}
+
+/*animacion -> necesario para el párrafo y los DIVS*/
+.animated {
+  -webkit-animation-duration: 1s; /*duración de la animación*/
+  animation-duration: 1s; /*animación*/
+  -webkit-animation-fill-mode: both; /*animación*/
+  animation-fill-mode: both; /*para que la animación dure bien*/
+}
+/*FILTRO -> AZUL*/
+/*
+.filtroAzul {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}*/
